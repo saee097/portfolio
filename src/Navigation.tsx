@@ -1,0 +1,89 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+export default function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Services', href: '#services' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
+  return (
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="fixed top-0 w-full bg-[#0f172a]/90 backdrop-blur-md z-50 border-b border-[#1e293b]"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <Link href="#home" className="text-xl font-bold text-[#3b82f6]">
+            SR
+          </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm hover:text-[#3b82f6] transition-colors duration-300"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden flex flex-col gap-1.5"
+          >
+            <motion.span
+              animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+              className="w-6 h-0.5 bg-[#3b82f6] block"
+            />
+            <motion.span
+              animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+              className="w-6 h-0.5 bg-[#3b82f6] block"
+            />
+            <motion.span
+              animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+              className="w-6 h-0.5 bg-[#3b82f6] block"
+            />
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={isOpen ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden overflow-hidden"
+        >
+          <div className="flex flex-col gap-4 py-4 border-t border-[#1e293b]">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="text-sm hover:text-[#3b82f6] transition-colors duration-300"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </motion.nav>
+  );
+}
