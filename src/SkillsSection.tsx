@@ -45,14 +45,14 @@ export default function SkillsSection() {
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1e293b]">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 20 }} 
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
             My <span className="text-[#3b82f6]">Skills</span>
-          </h2>
+          </h2>     
           <motion.div
             variants={containerVariants}
             initial="hidden"

@@ -49,7 +49,6 @@ export default function ServicesSection() {
       features: ['Schema Design', 'Query Optimization', 'Data Modeling', 'Backup & Recovery'],
     },
   ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -57,9 +56,8 @@ export default function ServicesSection() {
       transition: {
         staggerChildren: 0.1,
       },
-    },
-  };
-
+    }, 
+  }; 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -68,7 +66,6 @@ export default function ServicesSection() {
       transition: { duration: 0.6 },
     },
   };
-
   return (
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f172a]">
       <div className="max-w-6xl mx-auto">
@@ -113,6 +110,6 @@ export default function ServicesSection() {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </section>    
   );
 }
