@@ -12,7 +12,7 @@ export default function SkillsSection() {
       title: 'Backend',
       skills: ['Node.js', 'Express.js', 'MongoDB', 'Supabase', 'REST APIs', 'Authentication'],
     },
-    { 
+    {
       title: 'Tools & Platforms',
       skills: ['Git & GitHub', 'Postman', 'VS Code', 'Vercel', 'Docker', 'DevTools'],
     },
@@ -20,8 +20,8 @@ export default function SkillsSection() {
       title: 'Concepts',
       skills: ['JWT Authentication', 'REST APIs', 'Redux', 'Context API', 'SEO', 'Performance'],
     },
-  ]; 
-        
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,7 +39,7 @@ export default function SkillsSection() {
       y: 0,
       transition: { duration: 0.6 },
     },
-  };
+  }; 
 
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1e293b]">
@@ -53,7 +53,6 @@ export default function SkillsSection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
             My <span className="text-[#3b82f6]">Skills</span>
           </h2>
-
           <motion.div
             variants={containerVariants}
             initial="hidden"
