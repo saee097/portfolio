@@ -12,7 +12,7 @@ export default function SkillsSection() {
       title: 'Backend',
       skills: ['Node.js', 'Express.js', 'MongoDB', 'Supabase', 'REST APIs', 'Authentication'],
     },
-    {
+    { 
       title: 'Tools & Platforms',
       skills: ['Git & GitHub', 'Postman', 'VS Code', 'Vercel', 'Docker', 'DevTools'],
     },
@@ -20,8 +20,8 @@ export default function SkillsSection() {
       title: 'Concepts',
       skills: ['JWT Authentication', 'REST APIs', 'Redux', 'Context API', 'SEO', 'Performance'],
     },
-  ];
-
+  ]; 
+    
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

@@ -9,7 +9,7 @@ export default function HeroSection() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-      },
+      },     
     },
   };
   const itemVariants = {
