@@ -12,7 +12,7 @@ export default function ProjectsSection() {
       features: ['User Authentication', 'Real-time Analytics', 'Charts & Data Visualization', 'Responsive Design'],
       image: 'saas-dashboard',
     },
-    {
+    {   
       title: 'E-Commerce Store',
       description:
         'Full-featured e-commerce platform with product catalog, shopping cart, and integrated payment processing. Built with React and Node.js backend.',
@@ -21,13 +21,13 @@ export default function ProjectsSection() {
       image: 'ecommerce-store',
     },
     {
-      title: 'AI Web Application',
+       title: 'AI Web Application',
       description:
         'An intelligent web application leveraging OpenAI API for generating content, answering queries, and creative tasks. User-friendly interface with authentication.',
       tech: ['Next.js', 'OpenAI API', 'TypeScript', 'Tailwind CSS', 'Authentication'],
       features: ['AI Chat', 'Prompt System', 'User Accounts', 'Usage Analytics'],
       image: 'ai-webapp',
-    },
+    },     
     {
       title: 'Portfolio CMS',
       description:

@@ -21,7 +21,7 @@ export default function SkillsSection() {
       skills: ['JWT Authentication', 'REST APIs', 'Redux', 'Context API', 'SEO', 'Performance'],
     },
   ]; 
-    
+        
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
