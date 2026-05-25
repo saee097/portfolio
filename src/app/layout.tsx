@@ -18,8 +18,12 @@ export const metadata: Metadata = {
   description: "Full-Stack Web Developer specializing in React, Next.js, TypeScript, and Node.js. Building scalable, modern web applications.",
   keywords: "Full-Stack Developer, React, Next.js, TypeScript, Node.js, Web Developer",
   authors: [{ name: "Saeed Ur Rahman" }],
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
