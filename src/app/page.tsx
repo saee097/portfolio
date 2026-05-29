@@ -10,7 +10,15 @@ import Footer from '@/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0f172a] text-[#f8fafc]">
+    <>
+      <a href="#main-content" className="sr-only">
+        Skip to main content
+      </a>
+      <main
+        id="main-content"
+        className="min-h-screen bg-[#0f172a] text-[#f8fafc]"
+        tabIndex={-1}
+      >
       <Navigation />
       <HeroSection />
       <AboutSection />
@@ -21,5 +29,6 @@ export default function Home() {
       <ContactSection />
       <Footer />
     </main>
+    </>
   );
 }

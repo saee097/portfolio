@@ -15,10 +15,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Saeed Ur Rahman | Full-Stack Web Developer",
-  description: "Full-Stack Web Developer specializing in React, Next.js, TypeScript, and Node.js. Building scalable, modern web applications.",
-  keywords: "Full-Stack Developer, React, Next.js, TypeScript, Node.js, Web Developer",
+  description:
+    "Full-Stack Web Developer specializing in React, Next.js, TypeScript, and Node.js. Building scalable, modern web applications.",
+  keywords: [
+    "Full-Stack Developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Web Developer",
+  ],
   authors: [{ name: "Saeed Ur Rahman" }],
-  robots: "index, follow",
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "Saeed Ur Rahman | Full-Stack Web Developer",
+    description:
+      "Full-Stack Web Developer specializing in React, Next.js, TypeScript, and Node.js.",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export const viewport = {

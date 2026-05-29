@@ -5,13 +5,14 @@ import { useState } from 'react';
 import type { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { Mail, MessageCircle } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { contactChannels } from '@/data/portfolio';
 
-interface ContactInfo {
-  icon: ReactNode;
-  label: string;
-  value: string;
-  link: string;
-}
+const contactIcons: Record<(typeof contactChannels)[number]['label'], ReactNode> = {
+  Email: <Mail size={30} />,
+  LinkedIn: <FaLinkedin size={30} />,
+  GitHub: <FaGithub size={30} />,
+  WhatsApp: <MessageCircle size={30} />,
+};
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -74,37 +75,11 @@ export default function ContactSection() {
     }
   };
 
-  const contactInfo: ContactInfo[] = [
-    {
-      icon: <Mail size={30} />,
-      label: 'Email',
-      value: 'saeed@example.com',
-      link: 'mailto:saeed@example.com',
-    },
-    {
-      icon: <FaLinkedin size={30} />,
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/saeed',
-      link: 'https://linkedin.com/in/saeed',
-    },
-    {
-      icon: <FaGithub size={30} />,
-      label: 'GitHub',
-      value: 'github.com/saeed',
-      link: 'https://github.com/saeed',
-    },
-    {
-      icon: <MessageCircle size={30} />,
-      label: 'WhatsApp',
-      value: '+92 3XX XXXXXXX',
-      link: 'https://wa.me/923001234567',
-    },
-  ];
-
   return (
     <section
       id="contact"
       className="bg-[#1e293b] py-20 px-4 sm:px-6 lg:px-8"
+      aria-labelledby="contact-heading"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -115,7 +90,7 @@ export default function ContactSection() {
         >
           {/* Section Heading */}
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-white mb-4">
               Get In <span className="text-[#3b82f6]">Touch</span>
             </h2>
 
@@ -147,17 +122,18 @@ export default function ContactSection() {
               </div>
 
               <div className="space-y-4">
-                {contactInfo.map((info, index) => (
+                {contactChannels.map((info) => (
                   <motion.a
-                    key={index}
+                    key={info.label}
                     href={info.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ x: 5 }}
                     className="group flex items-start gap-4 rounded-xl border border-[#3b82f6]/10 bg-[#0f172a] p-5 hover:border-[#3b82f6]/30 hover:bg-[#111c31] transition-all duration-300"
+                    aria-label={`${info.label}: ${info.value}`}
                   >
                     <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-[#3b82f6]/10 text-[#3b82f6] group-hover:text-[#60a5fa] transition-colors">
-                      {info.icon}
+                      {contactIcons[info.label]}
                     </div>
 
                     <div>
@@ -182,6 +158,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
               onSubmit={handleSubmit}
               className="space-y-6 rounded-2xl border border-[#3b82f6]/20 bg-[#0f172a] p-8 shadow-2xl"
+              aria-label="Contact form"
             >
               {/* Name */}
               <div>
@@ -269,14 +246,22 @@ export default function ContactSection() {
 
               {/* Success Message */}
               {submitStatus === 'success' && (
-                <div className="rounded-lg border border-green-500/30 bg-green-500/10 p-3 text-sm text-green-400">
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="rounded-lg border border-green-500/30 bg-green-500/10 p-3 text-sm text-green-400"
+                >
                   ✓ Message sent successfully! I&apos;ll get back to you soon.
                 </div>
               )}
 
               {/* Error Message */}
               {submitStatus === 'error' && (
-                <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-400">
+                <div
+                  role="alert"
+                  aria-live="assertive"
+                  className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-400"
+                >
                   ✗ Failed to send message. Please try again.
                 </div>
               )}

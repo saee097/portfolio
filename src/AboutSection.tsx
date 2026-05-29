@@ -4,7 +4,11 @@ import { motion } from 'framer-motion';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f172a]">
+    <section
+      id="about"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f172a]"
+      aria-labelledby="about-heading"
+    >
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -12,7 +16,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 id="about-heading" className="text-4xl md:text-5xl font-bold mb-12 text-center">
             About <span className="text-[#3b82f6]">Me</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">

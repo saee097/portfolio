@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Palette, Settings, Rocket, Link, Zap, Database } from 'lucide-react';
+import { Palette, Settings, Rocket, Link as LinkIcon, Zap, Database } from 'lucide-react';
 import { ReactNode } from 'react';
 
 interface Service {
@@ -33,7 +33,7 @@ export default function ServicesSection() {
     {
       title: 'API Integration',
       description: 'Seamless integration of third-party APIs and services into your applications.',
-      icon: <Link className="w-10 h-10" />,
+      icon: <LinkIcon className="w-10 h-10" />,
       features: ['API Integration', 'Data Mapping', 'Error Handling', 'Testing'],
     },
     {
@@ -67,7 +67,11 @@ export default function ServicesSection() {
     },
   };
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f172a]">
+    <section
+      id="services"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f172a]"
+      aria-labelledby="services-heading"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,7 +79,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-12 text-center">
             Services I <span className="text-[#3b82f6]">Offer</span>
           </h2>
 
@@ -86,9 +90,9 @@ export default function ServicesSection() {
             viewport={{ once: true }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {services.map((service, index) => (
+            {services.map((service) => (
               <motion.div
-                key={index}
+                key={service.title}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
                 className="bg-[#1e293b] rounded-lg p-6 border border-[#3b82f6]/20 hover:border-[#3b82f6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#3b82f6]/10"
@@ -98,8 +102,8 @@ export default function ServicesSection() {
                 <p className="text-[#cbd5e1] mb-4">{service.description}</p>
 
                 <div className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start">
+                  {service.features.map((feature) => (
+                    <div key={feature} className="flex items-start">
                       <span className="text-[#3b82f6] mr-2 text-sm">✓</span>
                       <span className="text-[#cbd5e1] text-sm">{feature}</span>
                     </div>
