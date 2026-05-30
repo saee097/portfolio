@@ -78,10 +78,9 @@ export default function ProjectsSection() {
                   </ul>
                 </div>
 
-                {/* Links */}
-                {'github' in project || 'live' in project ? (
+                {(project.github || project.live) && (
                   <div className="px-6 py-4 bg-[#1e293b]/50 border-t border-[#3b82f6]/20 flex gap-3">
-                    {'github' in project && project.github ? (
+                    {project.github ? (
                       <a
                         href={project.github}
                         target="_blank"
@@ -91,7 +90,7 @@ export default function ProjectsSection() {
                         GitHub
                       </a>
                     ) : null}
-                    {'live' in project && project.live ? (
+                    {project.live ? (
                       <a
                         href={project.live}
                         target="_blank"
@@ -102,7 +101,7 @@ export default function ProjectsSection() {
                       </a>
                     ) : null}
                   </div>
-                ) : null}
+                )}
               </motion.article>
             ))}
           </motion.div>

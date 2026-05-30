@@ -81,7 +81,17 @@ export const experience = {
   techStack: ['React', 'Next.js', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS'],
 } as const;
 
-export const projects = [
+export type PortfolioProject = {
+  title: string;
+  description: string;
+  tech: readonly string[];
+  features: readonly string[];
+  image: string;
+  github?: string;
+  live?: string;
+};
+
+export const projects: PortfolioProject[] = [
   {
     title: 'Personal Portfolio Website',
     description:
@@ -140,4 +150,4 @@ export const projects = [
     features: ['Performance Metrics', 'Error Tracking', 'User Analytics', 'Real-time Alerts'],
     image: 'monitoring-dashboard',
   },
-] as const;
+];
