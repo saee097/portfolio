@@ -78,16 +78,31 @@ export default function ProjectsSection() {
                   </ul>
                 </div>
 
-                {/* CTA */}
-                <div className="px-6 py-4 bg-[#1e293b]/50 border-t border-[#3b82f6]/20">
-                  <button
-                    type="button"
-                    className="w-full py-2 text-[#60a5fa] hover:text-[#3b82f6] font-semibold transition-colors text-sm"
-                    aria-label={`View project: ${project.title}`}
-                  >
-                    View Project →
-                  </button>
-                </div>
+                {/* Links */}
+                {'github' in project || 'live' in project ? (
+                  <div className="px-6 py-4 bg-[#1e293b]/50 border-t border-[#3b82f6]/20 flex gap-3">
+                    {'github' in project && project.github ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2 text-center text-[#60a5fa] hover:text-[#3b82f6] font-semibold transition-colors text-sm border border-[#3b82f6]/30 rounded hover:border-[#3b82f6]/60"
+                      >
+                        GitHub
+                      </a>
+                    ) : null}
+                    {'live' in project && project.live ? (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2 text-center bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold transition-colors text-sm rounded"
+                      >
+                        Live Demo
+                      </a>
+                    ) : null}
+                  </div>
+                ) : null}
               </motion.article>
             ))}
           </motion.div>

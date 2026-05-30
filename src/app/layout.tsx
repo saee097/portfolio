@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://saee097.github.io/portfolio/"),
   title: "Saeed Ur Rahman | Full-Stack Web Developer",
   description:
     "Full-Stack Web Developer specializing in React, Next.js, TypeScript, and Node.js. Building scalable, modern web applications.",

@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Saeed Ur Rahman — Portfolio
 
-## Getting Started
+Personal portfolio built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
 
-First, run the development server:
+## Links
+
+- **Live site:** [https://saee097.github.io/portfolio/](https://saee097.github.io/portfolio/)
+- **GitHub:** [https://github.com/saee097/portfolio](https://github.com/saee097/portfolio)
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deployment (GitHub Pages)
 
-To learn more about Next.js, take a look at the following resources:
+Pushes to `main` run the [Deploy to GitHub Pages](.github/workflows/deploy.yml) workflow.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**One-time setup:** In your repo on GitHub → **Settings** → **Pages** → **Build and deployment** → set **Source** to **GitHub Actions**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+After the first successful workflow run, the site is live at the URL above.
 
-## Deploy on Vercel
+## Optional: Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For a custom domain or Vercel preview URLs, import [github.com/saee097/portfolio](https://github.com/saee097/portfolio) at [vercel.com/new](https://vercel.com/new) and deploy (no `basePath` needed on Vercel).

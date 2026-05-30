@@ -3,6 +3,8 @@ export const siteConfig = {
   role: 'Full-Stack Web Developer',
   company: 'EYRATECH',
   email: 'saeedsaeed7745@gmail.com',
+  github: 'https://github.com/saee097/portfolio',
+  live: 'https://saee097.github.io/portfolio/',
 } as const;
 
 export const navItems = [
@@ -24,7 +26,7 @@ export const contactChannels = [
   {
     label: 'LinkedIn',
     value: 'linkedin.com/in/saeed-ur-rahman-a3a13a37b',
-    link: 'linkedin.com/in/saeed-ur-rahman-a3a13a37b',
+    link: 'https://www.linkedin.com/in/saeed-ur-rahman-a3a13a37b',
   },
   {
     label: 'GitHub',
@@ -80,6 +82,16 @@ export const experience = {
 } as const;
 
 export const projects = [
+  {
+    title: 'Personal Portfolio Website',
+    description:
+      'A modern, responsive developer portfolio built with Next.js, TypeScript, and Framer Motion. Showcases projects, skills, experience, and contact information.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    features: ['Responsive Design', 'Smooth Animations', 'SEO Optimized', 'GitHub Pages Deploy'],
+    image: 'portfolio',
+    github: 'https://github.com/saee097/portfolio',
+    live: 'https://saee097.github.io/portfolio/',
+  },
   {
     title: 'Full-Stack SaaS Dashboard',
     description:
